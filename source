@@ -1,0 +1,177 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))();
+local Window = OrionLib:MakeWindow({Name = "Shrek in the Backrooms V,1,0,0 -Undectected", HidePremium = false, IntroText = "Shrek in the Backrooms V,1,0,0", SaveConfig = true, ConfigFolder = "OrionTest"})
+
+function Teleport(teleportPlace)
+    local player = game.Players.LocalPlayer
+    player.Character.HumanoidRootPart.CFrame = teleportPlace
+end
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Spawn",
+	Callback = function()
+      	Teleport(workspace:GetChildren()[216].CFrame)	
+  	end    
+})
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Badges/Daily",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+
+Tab:AddButton({
+	Name = "Daily reward",
+	Callback = function()
+      	Teleport(workspace.DailyReward["Treasure chest"].Top:GetChildren()[9].CFrame)	
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Beach Badge",
+	Callback = function()
+      	Teleport(workspace.BadgeAreas.Beach.CFrame)	
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Office Badge",
+	Callback = function()
+      	Teleport(workspace.Tutorial["2"].Part.CFrame)	
+  	end    
+})
+
+Tab:AddButton({
+	Name = "???",
+	Callback = function()
+      	Teleport()	
+  	end    
+})
+
+Tab:AddLabel("More badges comeing soon.")
+--
+-----
+-----
+--
+--secret rooms
+
+local Tab = Window:MakeTab({
+	Name = "Secret rooms",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Secret room 1",
+	Callback = function()
+      	Teleport(workspace:GetChildren()[223].CFrame)	
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Secret Vent 2",
+	Callback = function()
+      	Teleport(workspace.SecretVent.Open.CFrame)	
+  	end    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Shop",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+	Name = "Coins shop",
+	Callback = function()
+      	Teleport(workspace:GetChildren()[89].CFrame)	
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Codes",
+	Callback = function()
+      	Teleport(workspace.Codes:GetChildren()[3].CFrame)	
+  	end    
+})
+
+
+
+
+
+
+
+
+local PlayerTab = Window:MakeTab({
+    Name = "Player",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+   })
+   
+   local Section = PlayerTab:AddSection({
+    Name = "Movement"
+   })
+   
+   PlayerTab:AddSlider({
+    Name = "Walkspeed",
+    Min = 16,
+    Max = 125,
+    Default = 16,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "WS",
+    Callback = function(Value)
+     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end    
+   })
+   
+
+
+   local PlayerTab12 = Window:MakeTab({
+    Name = "About",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+   })
+   PlayerTab12:AddLabel("Made by PlayzLx Join discord https://discord.gg/X8ZtwCZAfy")
+   
+
+   OrionLib:Init(m)
